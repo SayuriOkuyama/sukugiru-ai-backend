@@ -2,7 +2,6 @@ package datastore
 
 import (
 	"github.com/SayuriOkuyama/sukugiru-ai-backend/domain/repository"
-	"github.com/dotd-inc/dothatch-backend/domain/repository"
 	"gorm.io/gorm"
 )
 
