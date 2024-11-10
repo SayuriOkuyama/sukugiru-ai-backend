@@ -1,12 +1,13 @@
+include config/local.env
+export
+
 GOCMD			=	go
 GOVET			=	$(GOCMD) vet
 GOBUILD		=	$(GOCMD) build
 GORETURNS	= goreturns
 LINTER		=	golangci-lint
-APP				=	dothatch-backend
 PLATFORM	=	linux/arm64
 ENV				= local
-PGURL			=	postgres://default:oa7szhIYHM3A@ep-still-poetry-a4s5bv2z-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require
 
 .PHONY: test
 
