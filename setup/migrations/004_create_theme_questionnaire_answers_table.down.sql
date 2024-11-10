@@ -1,0 +1,7 @@
+ALTER TABLE theme_questionnaire_answers
+DROP CONSTRAINT fk_theme_questionnaire_answer_sdg_theme_questionnaire_answers_id IF EXISTS;
+
+ALTER TABLE theme_questionnaire_answers
+DROP CONSTRAINT fk_user_hobbies_theme_questionnaire_answers_id IF EXISTS;
+
+DROP TABLE IF EXISTS theme_questionnaire_answers;
