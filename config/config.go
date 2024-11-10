@@ -33,6 +33,7 @@ func NewConfig() (*Config, error) {
 	current.Database.User = os.Getenv("POSTGRES_USER")
 	current.Database.Password = os.Getenv("POSTGRES_PASSWORD")
 	current.Database.Database = os.Getenv("POSTGRES_DATABASE")
+	current.Database.Port = os.Getenv("POSTGRES_PORT")
 
 	return current, nil
 }

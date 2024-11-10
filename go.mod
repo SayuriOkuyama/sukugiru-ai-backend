@@ -3,6 +3,7 @@ module github.com/SayuriOkuyama/sukugiru-ai-backend
 go 1.22.4
 
 require (
+	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.12.0
 	github.com/swaggo/echo-swagger v1.4.1
 	gorm.io/driver/postgres v1.5.9

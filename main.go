@@ -1,15 +1,23 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"os"
 
 	"github.com/SayuriOkuyama/sukugiru-ai-backend/config"
 	"github.com/SayuriOkuyama/sukugiru-ai-backend/interactor"
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	echoSwagger "github.com/swaggo/echo-swagger"
 )
+
+func init() {
+	if err := godotenv.Load("config/local.env"); err != nil {
+			log.Printf("No .env file found")
+	}
+}
 
 func main() {
 	// 環境変数取得
