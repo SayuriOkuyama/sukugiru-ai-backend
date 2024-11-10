@@ -25,7 +25,10 @@ func NewInteractor(
 	db *gorm.DB,
 	gk string, // TODO: geminiAPIKey に修正する
 ) Interactor {
-	return &interactor{db,gk}
+	return &interactor{
+		db,
+		gk,
+	}
 }
 
 // handler をまとめる構造体
