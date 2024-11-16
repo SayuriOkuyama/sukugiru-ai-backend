@@ -7,7 +7,7 @@ import (
 )
 
 type (
-	// 外部から呼び出す関数
+	// 外部から呼び出す関数の interface
 	ThemeHandler interface {
 		PostQuestionnaireForTheme(c echo.Context, auth bool) error
 	}

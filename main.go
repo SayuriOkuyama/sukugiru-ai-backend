@@ -35,6 +35,9 @@ func main() {
 		return
 	}
 
+	// Vercel Edge Config
+	edgeConfig := config.NewEdgeConfig(cfg.EdgeConfig.APIKey, cfg.EdgeConfig.Token)
+
 	conn := config.NewDBConnection(cfg)
 
 	// 本番環境以外の場合はデバッグモードを有効にする
@@ -62,6 +65,7 @@ func main() {
 	i := interactor.NewInteractor(
 		conn,
 		cfg.GeminiAPIKey,
+		edgeConfig,
 	)
 	h := i.NewAppHandler()
 

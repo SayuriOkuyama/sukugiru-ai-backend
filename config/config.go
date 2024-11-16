@@ -15,6 +15,10 @@ type Config struct {
 		Port     string
 	}
 	GeminiAPIKey  string
+  EdgeConfig struct {
+    APIKey string
+    Token string
+  }
 }
 
 func NewConfig() (*Config, error) {
@@ -35,8 +39,9 @@ func NewConfig() (*Config, error) {
 	current.Database.Database = os.Getenv("POSTGRES_DATABASE")
 	current.Database.Port = os.Getenv("POSTGRES_PORT")
 
+  // Vercel Edge Config
+  current.EdgeConfig.APIKey = os.Getenv("EDGE_CONFIG_ID")
+  current.EdgeConfig.Token = os.Getenv("EDGE_CONFIG_TOKEN")
+
 	return current, nil
 }
-
-
-
