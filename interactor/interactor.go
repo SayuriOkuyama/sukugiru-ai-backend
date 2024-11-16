@@ -1,6 +1,8 @@
 package interactor
 
 import (
+	edgeconfig "github.com/thatmattlove/go-vercel-edge-config"
+
 	"github.com/SayuriOkuyama/sukugiru-ai-backend/domain/repository"
 	"github.com/SayuriOkuyama/sukugiru-ai-backend/infrastructure/persistence/datastore"
 	"github.com/SayuriOkuyama/sukugiru-ai-backend/presentation/http/handler"
@@ -18,16 +20,19 @@ type (
 	interactor struct {
 		db             *gorm.DB
 		geminiAPIKey     string // TODO: geminiAPIKey の型に修正する
+		edgeConfig *edgeconfig.VercelEdgeConfigClient
 	}
 )
 
 func NewInteractor(
 	db *gorm.DB,
 	gk string, // TODO: geminiAPIKey に修正する
+	ec *edgeconfig.VercelEdgeConfigClient,
 ) Interactor {
 	return &interactor{
 		db,
 		gk,
+		ec,
 	}
 }
 
